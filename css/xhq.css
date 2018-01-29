@@ -1,3 +1,5 @@
+
+
 .x_ul li{
           color: rgb(99,192,245);
           text-shadow: rgba(104,182,255,0.5) 0px 0px 5px;
@@ -20,3 +22,21 @@
 input{
                   background: #FFFFFF;
               }
+body {
+	background:rgb(21,21,21);
+	font-family:Monaco,"Bitstream Vera Sans Mono","Lucida Console",Terminal,monospace;
+}
+h2 {
+	color:rgb(181,232,83);
+}
+li, a {
+	color:rgb(99,192,245);
+	text-shadow:rgba(104,182,255,0.9) 0px 0px 10px;
+}
+hr {
+	color:rgb(181,232,83);
+	height:1px;
+	line-height:24px;
+	border-bottom-style:dashed;
+	border-top-style:none;
+}
