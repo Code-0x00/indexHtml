@@ -1,0 +1,22 @@
+.x_ul li{
+          color: rgb(99,192,245);
+          text-shadow: rgba(104,182,255,0.5) 0px 0px 5px;
+        }
+.fileUpload {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+          }
+.fileUpload input.upload {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			font-size: 20px;
+			cursor: pointer;
+			opacity: 0;
+			}
+input{
+                  background: #FFFFFF;
+              }
