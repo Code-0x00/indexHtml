@@ -208,17 +208,10 @@ function tmp(){
 	{"keyword":"aaa","url":"bbb"},
 	{"keyword":"aaa","url":"bbb"}
 	];
-	var oUl=document.getElementById("xul");
-	for (ti in data){
-		console.log(ti);
-	}
 	
 	var oUl=document.getElementById("xul");
-	//var oUl;
-	for (var i=0;i<3;i++){
-		var s="<li><a href=\""+i+"\">"+i+"</a></li>";
-		document.write(s);
-	}
+
+	var oUl=document.getElementById("xul");
 
 	for(var i=0;i<3;i++){
 		var oLi=document.createElement("li");
