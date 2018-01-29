@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/css/hack.css">
+
+<script type="text/javascript">
+
+	function setUrlList(filename){
+		document.write("<li><a href=\"./"+filename+"\">"+filename+"</a></li>");
+	}
+
+	function setJS(jsname){
+        var varIP="10.12.12.30";
+        var script_src="<script src=\"//";
+        script_src=script_src+varIP+"/";
+        script_src=script_src+jsname+"?v=0\"";
+        script_src=script_src+"></";
+        script_src=script_src+"script>";
+
+        document.write(script_src);
+      }
+      function setJS2(){
+        document.getElementById("test").innerHTML = "233" ;
+      }
+      function add1() {
+      	alert(233);
+      }
+</script>
+<script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+<script src="http://echarts.baidu.com/vendors/jquery/jquery.min.js"></script>
+<script src="./js/xhq.js?v=0"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>XHQ Localhost</title>
+</head>
+
+<body>
+
+
+<script id="test">666</script>
+<script type="text/javascript">
+	setJS2()
+</script>
+<h2>Debug
+<p id="timeid">time</p>
+</h2>
+
+<!-- <script type="text/javascript">
+	setInterval(function(){
+    setDate();
+  },1000);
+</script> -->
+
+<hr>
+<input type="button" onclick="add1();"  ><img src="img/add.png"></input>
+<a onclick="add1();" class="button">gg</a>
+<img src="img/0.jpg" onclick="add1();">
+<ul id="xul">
+<li><a href="https://www.baidu.com/" target="_blank">Baidu</a></li>
+<li><a href="https://github.com/Code-0x00" target="_blank">Github</a></li>
+<script type="text/javascript">
+	setUrlList("pets.apk");
+	setUrlList("x0.apk");
+	setUrlList("Co-Training.png");
+	setUrlList("QQ.apk");
+	setUrlList("PetsClient.tar.gz");
+	tmp();
+</script>
+<li><a href="./bloxorz.html">BLOXORZ-189493</a></li>
+
+</ul>
+
+<hr>
+<form role="form" action="classify_url" method="get">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" name="imageurl0" id="imageurl0" >
+            <input type="text" class="form-control" name="imageurl1" id="imageurl1" >
+            <span class="input-group-btn">
+              <input class="btn btn-primary" value="分类网络图片" type="submit" id="classifyurl"></input>
+            </span>
+          </div>
+        </div>
+      </form>
+
+      <form>
+        <style type="text/css">
+           .test:input
+           {
+              background: #000000;
+              display: inline-block;
+              right: 0;
+              top: 0;
+              opacity: 0;
+
+            }
+            .test:hover{
+              background: #AA00DD;
+              border-color: #78C3F3;
+              color: #004978;
+              text-decoration: none;
+            }
+          </style>
+<input type="file" name="imagefile" id="imagefile" class="test">
+<input type="text" name="imageurl1" id="imageurl1" class="test" >
+      </form>
+
+      <style type="text/css">
+        .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+      </style>
+      <div class="fileUpload btn btn-primary">
+    <span>Upload</span>
+    <input type="file" class="upload" />
+</div>
+<style type="text/css">
+  .uuu{
+    color: rgb(99,192,245);
+    text-shadow: rgba(104,182,255,0.5) 0px 0px 5px;
+  }
+</style>
+<ul class="uuu" id="xUl">
+  <li>l1</li>
+  <li>l2</li>
+</ul>
+      
+<div style="width: 100%;float: right;height: 700px ;border-top: 2px solid #F00" id="div_mychart">
+	<h1>ggggg</h1>
+	<hr>
+</div>
+   <script type="text/javascript">
+
+  
+  </script>      
+<script type="text/javascript">
+	var ti=document.getElementById('timeid');
+	var myChart = echarts.init(document.getElementById('div_mychart'));
+
+	$.get('cb.json', function (data) {
+		
+		var base = 0;
+		myChart.setOption(
+		option = {
+		title: {
+			text: 'title'
+		},
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				type: 'cross',
+				animation: false,
+				label: {
+					backgroundColor: '#ccc',
+					borderColor: '#aaa',
+					borderWidth: 1,
+					shadowBlur: 0,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					textStyle: {
+						color: '#222'
+				}
+			}
+		},
+		formatter: function (params) {
+			return params[2].name + '<br/>' + params[2].value;
+			}
+		},
+
+		xAxis: {
+		type: 'category',
+		data: data.map(function (item) {
+			return item.date;
+			}),
+		axisLabel: {
+			formatter: function (value, idx) {
+
+				var date = new Date(value);
+				return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');
+				}
+			},
+			splitLine: {
+				show: false
+			},
+			boundaryGap: false
+		},
+		yAxis: {
+		axisLabel: {
+			formatter: function (val) {
+				return (val - base) * 100 + '%';
+				}
+			},
+			axisPointer: {
+				label: {
+					formatter: function (params) {
+					return ((params.value - base) * 100).toFixed(1) + '%';
+					}
+				}
+			},
+			splitNumber: 3,
+			splitLine: {
+				show: false
+			}
+		},
+		series: [{
+		name: 'L',
+		type: 'line',
+		data: data.map(function (item) {
+
+		return item.l + base;
+		}),
+		lineStyle: {
+		normal: {
+		opacity: 0
+		}
+		},
+		stack: 'confidence-band',
+		symbol: 'none'
+		}, {
+		name: 'U',
+		type: 'line',
+		data: data.map(function (item) {
+		return item.u - item.l;
+		}),
+		lineStyle: {
+		normal: {
+		opacity: 0
+		}
+		},
+		areaStyle: {
+		normal: {
+		color: '#ccc'
+		}
+		},
+		stack: 'confidence-band',
+		symbol: 'none'
+		}, {
+		type: 'line',
+		data: data.map(function (item) {
+		return item.value + base;
+		}),
+			hoverAnimation: false,
+			symbolSize: 6,
+			itemStyle: {
+				normal: {
+					color: '#c23531'
+				}
+			},
+			showSymbol: false
+		}]
+		});
+	});
+
+
+	xul=document.getElementById('xUl');
+	
+	function setList(){
+		$.getJSON("./json/test.json",function(data){
+			list_li='';
+			for(i in data){
+				list_li=list_li+'<li>'+data[i].l+'</li>';
+			}
+			xul.innerHTML=list_li;
+		});
+	}
+
+
+setList();
+	setInterval(function(){
+		ti.innerHTML=Date();
+	}
+	,1000);
+</script>
+   
+</body>
+</html>
